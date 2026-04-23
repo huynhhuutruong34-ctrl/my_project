@@ -90,7 +90,11 @@ export const routes: AppRoute[] = [
   },
   {
     path: "/admin",
-    element: <AdminLayout />,
+    element: (
+      <RequireAdmin>
+        <AdminLayout />
+      </RequireAdmin>
+    ),
     children: [
       {
         index: true,
